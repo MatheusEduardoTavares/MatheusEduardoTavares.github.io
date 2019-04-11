@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	<head>
+		<title>Tudo sobre Google Glass</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+		<link rel="stylesheet" type="text/css" href="_css/specs.css" />
+	</head>
+	
+	<script language="javascript" src="_javascript/funcoes.js"></script>
+	
+	<body>
+
+		<div id="interface">
+			<header id="cabecalho">
+				<hgroup>
+					<h1>Google Glass</h1>
+					<h2>A revolução do Google está chegando</h2>
+
+				</hgroup>
+				
+				<!--Essa página receberá um estilo CSS somente para a mesma, por isso não compensa usar o estilo.css que será usado em todas páginas para conter também o CSS somente dessa página, isso o iria sobrecarregar de mais, já que todas páginas já irão usá-lo. Logo, é mais fácil utilizar outro arquivo CSS somente para essa página. Essa página utilizará o specs.css-->
+				
+					<img id="icone" src="_imagens/especificacoes.png"></img>
+
+				<nav id="menu">
+					<h1>Menu Principal</h1>
+					<ul>
+						<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="index.html">Home</a></li>
+						<li><a href="specs.html" onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">Especificações</a></li>
+						<li><a href="fotos.html" onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">Fotos</a></li>
+						<li><a href="multimidia.html" onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">Multimídia</a></li>
+						<li><a href="fale-conosco.html" onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">Fale conosco</a></li>
+					</ul>
+				</nav>
+
+			</header>
+				
+			<section id="corpo-full">	
+				<article id="noticia-principal">
+					<header id="cabecalho-artigo">
+						<hgroup>
+							<h3>Glass > Especificações</h3>
+							<h1>Raio-X no Google Glass</h1>
+							<h2>por Matheus Eduardo Tavares</h2>
+							<h3 class="direita">Atualizado em 12/04/2019</h3>
+						</hgroup>
+					</header>
+
+				<p>Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.</p>
+
+				<section id="conteudo">
+					<img src="_imagens/glass-esquema-marcado.jpg" alt="" usemap="#meumapa" />
+					<!--Podemos por áreas de imagens clicáveis, como nesse caso, utilizando a tag map embaixo da tag img, nomeando map com algum valor, e usando o parâmetro usemap="nome dado no map" na tag img -->
+					<!--Todo mapa é composto de áreas, por isso criamos as tags area dentro de map-->
+					<!--as tag area possuem shape a serem definidos, que podem ser retangulos ou circulos ou poligonal-->
+					<!--A tag coords pega com precisao as coordenadas em X daí em Y da área da img que será utilizada, daí pomos um href nessa area para mostrar que arquivo deverá ser aberto quando for clicado. Ao colocar no href google-glass.html#tela, mostramos que será aberto a página google glass.html que há na pasta, só que mais especificamente, será aberto essa página onde está o id tela -->
+					<!--Por fim, o target serve para mostrar onde será aberto esse arquivo puxado do href, no caso, será aberto na área que atende pelo nome de janela-->
+					<!-- As coordenadas para o shape circle são, respectivamente: valor em X do centro da circunferencia, valor em Y do centro da circunferencia, valor do raio. No caso da 2° area que usa o href da #camera, 158 é o X do ponto central, o 243 é o Y do ponto central, e o raio do circulo é 12-->
+					<!-- As coordenadas para o shape poligono depene de quantos pontos de intersecção esse polígono terá. Serão os valores de X e Y para cada ponto de intersecção do poligono. No nosso caso, serão 4 pontos de intersecção, ou seja, haverá 8 valores, um de X e um de Y para cada um desses pontos -->
+					<map name= "meumapa">
+						<area shape="poly" coords="182,219,266,209,266,242,186,255" href="google-glass.html#tela" target="janela" />
+						<area shape="circle" coords="158,243,12" href="google-glass.html#camera" target="janela" />
+						<area shape="circle" coords="76,52, 12" href="google-glass.html#gadgets" target="janela" />
+						<area shape="poly" coords="28,143,83,216,84,249,27,169" href="google-glass.html#sensores" target="janela" /> 
+					</map>
+					<iframe src="google-glass.html" name="janela" id="frame-spec" scrolling="no" ></iframe>
+				</section>
+				
+				</article>
+				
+			</section>
+
+				<footer id="rodape">
+				<p>Copyright &copy; 2019 - by Matheus Eduardo Tavares <br />
+				<a href="http://facebook.com/cursoemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursoemvideo" target="_blank">Twitter</a> </p>
+			</footer>
+		</div>
+		
+	</body>
+
+</html>

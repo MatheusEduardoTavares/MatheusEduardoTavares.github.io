@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	<head>
+		<title>Tudo sobre Google Glass</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+		<link rel="stylesheet" type="text/css" href="_css/media.css" />
+	</head>
+	
+	<script language="javascript" src="_javascript/funcoes.js"></script>
+	
+	<body>
+
+		<div id="interface">
+			<header id="cabecalho">
+				<hgroup>
+					<h1>Google Glass</h1>
+					<h2>A revolução do Google está chegando</h2>
+
+				</hgroup>
+				
+					<img id="icone" src="_imagens/multimidia.png"></img>
+
+				<nav id="menu">
+					<h1>Menu Principal</h1>
+					<ul type="disc">
+						<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="index.html">Home</a></li>
+						<li><a href="specs.html" onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/multimidia.png')">Especificações</a></li>
+						<li><a href="fotos.html" onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/multimidia.png')">Fotos</a></li>
+						<li><a href="multimidia.html" onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/multimidia.png')">Multimídia</a></li>
+						<li><a href="fale-conosco.html" onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/multimidia.png')">Fale conosco</a></li>
+					</ul>
+				</nav>
+
+			</header>
+
+			<section id="corpo-full">	
+				<article id="noticia-principal"> 
+					<header id="cabecalho-artigo">
+						<hgroup>
+							<h3>Glass > Multimídia</h3>
+							<h1>Sons e Vídeos</h1>
+							<h2>por Matheus Eduardo Tavares</h2>
+							<h3 class="direita">Atualizado em 12/04/2019</h3>
+						</hgroup>
+					</header>
+
+		    <div id="tv-radio">
+				<audio id="musica" controls="controls">
+					<source src="_media/2009-lovers-carvings-bibio.mp3" type="audio/mpeg" /> 
+					Desculpe, mas não foi possível carregar o áudio.
+					<!--Para colocar todos formatos de audio:-->
+					<!--
+					<source src="_media/2009-lovers-carvings-bibio.ogg" type="audio/ogg" /> 
+					<source src="_media/2009-lovers-carvings-bibio.m4a" type="audio/x-aac" /> 
+					-->
+				</audio>
+				<!--Não funciona em todos navegadores pois ainda estão se adaptando aos padrões. Para música há 3 padrões: MP3, OGG, AAC  e cada navegador escolhe quais padrões irá reconhecer. Para fazer a conversão de uma música para todos formatos para garantir que todos navegadores o abram, basta ir no site miro video converter, baixar esse programa, daí é só arrastar o arquivo de audion nele, ir em format >>> audio >>> ogg, assim o converte para ogg, daí é só clicar em show file, vai mostrar onde está o arquivo ogg e daí basta arrastar na pasta novamente. Já para converter para AAC, devemos baixar o itunes que também é gratuito. O Video deve ser convertirdo para webm SD-->
+				
+				<video id="filme" controls="controls" poster="_imagens/video-mini03.jpg">
+					<source src="_media/getting-started.mp4" type="video/mp4" />
+					Desculpe, mas não foi possível carregar o vídeo.
+					<!--Para colocar todos formatos de video:-->
+					<!--
+					<source src="_media/gerring-started.webm" type="video/webm" />
+					<source src="_media/gerring-started.ogv" type="video/ogg" />
+					-->
+				</video>
+				
+				
+				<!--Para colocar um vídeo do youtube, basta ir no vídeo, ir em compartilhar, depois em incorporar, e aparecerá lá o código do iframe do video que queremos botar no site. Basta copiar esse código e colar no site-->
+				
+			</div>
+			<!--Se o navegador do usuário for muito antigo, não funcionará nem o player de audio nem o de vídeo. Há uma forma de exibir mensagens de erro para o usuário caso isso aconteça. Essa forma é simplesmente abaixo de todos os sources colocados, colocar uma simples mensagem de erro, pois ela só aparecerá caso o navegador não carregue o video / audio -->
+
+				</article>
+			</section>
+					
+
+
+
+			<footer id="rodape">
+				<p>Copyright &copy; 2019 - by Matheus Eduardo Tavares <br />
+				<a href="http://facebook.com/cursoemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursoemvideo" target="_blank">Twitter</a> </p>
+			</footer>
+		</div>
+		
+	</body>
+
+</html>

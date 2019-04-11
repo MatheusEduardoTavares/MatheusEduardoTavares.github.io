@@ -1,0 +1,298 @@
+@charset "UTF-8"; 
+
+
+/*ou podemos adicionar uma fonte a partir do google fonts, que é um repositório publico de fontes que pode ser utilizado em qualquer site: */
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+@font-face{
+	font-family: 'FonteLogo';
+	src: url("../_fonts/bubblegum-sans-regular.otf");
+	/*o src é onde está a fonte, e o font family é o nome que damos a ela*/
+	/*daí basta colocar a font family no elemento que quiser com o nome 'FonteLogo'*/
+}
+
+/*tanto no HTML quanto no CSS um ID só pode ser aplicado para um objeto. Quando devemos atribuir um valor em vários objetos, devemos utilizar as classes. A classe defini a formatação para vários objetos. */
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #dddddd;
+	color: rgba(0,0,0,1);
+}
+
+
+div#interface{
+	width: 1300px;
+	background-color: #ffffff;
+	margin: -20px auto 0px auto;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+/*margin: cima direita baixo esquerda*/
+
+p {
+	text-align: justify;
+	text-indent: 50px;
+}
+
+a{
+	color: #606060;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+header#cabecalho img#icone{
+	position: absolute;
+	left: 1300px;
+	top: 70px;
+	
+}
+
+header#cabecalho{
+	border-bottom: 1px #606060 solid;
+	height: 150px;
+	background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+}
+
+header#cabecalho h1{
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 30pt;
+	color: #606060;
+	text-shadow: 1px 1px 1px rgba(0,0,0, .6);
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+header#cabecalho h2{
+	font-family: 'Titillium Web', sans-serif;
+	color: #888888;
+	font-size: 15pt;
+	padding: 0px;
+	margin-top: 0px;
+}
+
+/*o ../ volta uma pasta*/
+/*como a IMG é pequena, foi replicada várias vs no header para ocupar todo seu tamanho, e por isso devemos utilizar o recurso de no-repeat para nao repetir o objeto. E para posicionar seu espaço, basta por o deslocamento horizontal daí o vertical. Entretanto ela não fica como img, fica como fundo e por isso não da para dar botao direito nela e salvar img como*/
+
+/*o bordem-bottom faz uma linha em baixo do elemento*/
+/*podemos adicionar uma img por css utilizando o background: url("endereço")*/
+
+/* comentários para criar referências e se encontrar dentro do artigo de estilo */
+
+/* Formatação de imagens com legendas: */
+
+figure.foto-legenda{
+	position: relative;
+	box-shadow: 1px 1px 4px black;
+	border: 8px solid white;
+	
+}
+
+figure.foto-legenda img{
+	width: 100%;
+	height: 100%;
+}
+
+figure.foto-legenda figcaption {
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	background-color: rgba(0,0,0,0.4);
+	color: white;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+figure.foto-legenda:hover figcaption{
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+/* como colocamos uma posicao absoluta com top 0, e como o objeto conteiner que é o figure nao foi configurado com posicao relativa, o titulo acabou parando la em cima. Para resolver isso, basta colocar uma position relative no figure.foto-legend
+O box sizing faz com que o fundo colocado não ultrapasse a imagem já que foi posto o padding que o fazia ultrapassar
+o width e height 100 faz com que o fundo ocupe o espaço inteiro da img
+o padding da um espaçamento da escrita com a borda da img
+a posicao absoluta para o figcaption, que é a legenda é importante pois o permite ficar absoluto dentro do espaço de sua tag pai, que no caso é a figure.foto-legenda, que tem posicao relativa, ou seja, já ocupa aquele determinado espaço relativo
+a opacity: 0 faz com que a legenda suma */
+
+/* Formatação do menu: */
+/*para fazer o menu flutuar, primeiro devemos por o nav#menu disposto em bloco*/
+/*como queremos que apenas a lista flutue pela tela, colocamos uma posicao absolute para que ele consiga passar por cima dos documentos*/
+/*colocando posição absoluta podemos controlar o top e o left*/
+/*o parametro transition ainda está em implementação com os navegadores, entao é recomendavel utilizar no lugar dele */
+
+nav#menu {
+	display: block;
+}
+
+
+	header#cabecalho img#icone{
+	position: absolute;
+	left: 76%;
+	top: 70px;
+	}
+	
+	nav#menu ul{
+	list-style: none;
+	position: absolute;
+	top: -20px;
+	left: 40%; 
+	}
+	
+
+
+
+nav#menu li{
+	display: inline-block;
+	background-color: #dddddd; 
+	padding: 10px;
+	margin: 20px;
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+	
+}
+
+nav#menu li:hover{
+	background-color: #606060; 
+}
+
+nav#menu h1{
+	display: none;
+}
+
+nav#menu a{
+	color: black;
+	text-decoration: none;
+}
+
+nav#menu a:hover{
+	color: white;
+}
+
+/*NO HTML 5 não pode-se usar o align center e nem a tag center para centralizar os elementos na pagina. No html 5, usamos a margin para centralizar os elementos*/
+
+section#corpo {
+	display: block;
+	width: 950px;
+	float: left;
+	border-right: 1px solid #606060;
+	padding-right: 15px;
+}
+
+
+
+article#noticia-principal h2{
+	font-size: 13pt;
+	color: #606060;
+	background-color: #dddddd;
+	padding: 5px 0px 5px 10px;
+	margin: 10px 0px 10px 0px;
+}
+
+header#cabecalho-artigo h1{
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.direita{
+	text-align: right;
+}
+
+header#cabecalho-artigo h2{
+	font-size: 13pt;
+	color: #cecece;
+	background-color: #ffffff;
+	margin: 0px;
+}
+
+header#cabecalho-artigo h3{
+	font-size: 12px;
+	color: #
+}
+
+table#tabelaspec {
+	border: 1px solid #606060;
+	border-spacing: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*border spacing da o espaço entre as celulas. Colocar margin left auto e margin right auto torna o elemento centralizado*/
+
+table#tabelaspec td {
+	border: 1px solid #606060;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table#tabelaspec td.ce{
+	color: #ffffff;
+	background-color: #606060;
+	vertical-align: top;
+	font-weight: bold;
+}
+
+table#tabelaspec caption{
+	color: #888888;
+	font-size: 13pt;
+	font-weight: bolder;
+}
+
+table#tabelaspec caption span{
+	display: block;
+	float: right;
+	color: #000000;
+	font-size: 8pt;
+	margin-top: 10px;
+}
+
+table#tabelaspec td.cd{
+	background-color: #cecece;
+}
+
+aside#lateral{
+	display: block;
+	width: 300px;
+	float: right;
+	background-color: #dddddd;
+	padding: 10px;
+	margin-top: 10px;
+	box-shadow: 2px 2px 2px rgba(0,0,0, .5);
+}
+
+aside#lateral h1{
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-top: 0px;
+}
+
+aside#lateral h2{
+	background-color: #606060;
+	font-size: 13pt;
+	color: #ffffff;
+	padding: 5px;
+}
+
+footer#rodape{
+	clear: both;
+	border-top: 1px solid #606060;
+}
+
+footer#rodape p{
+	text-align: center;
+}
+/*para objetos que estão em display block, para organizar seu espaço no site, basta utilizar o comando float*/
+/*o clear: both limpa a formatação em ambos os lados, então, no caso do rodapé que não terá a mesma configuração do corpo principal e da barra lateral, é preciso por para que ele limpe essa área para dessa forma o fundo ficar disponível de forma correta pelo corpo do site */
+
+
